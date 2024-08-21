@@ -1,0 +1,19 @@
+Date	choose date
+Name	text
+Age	number
+Gender	option
+Address	text
+City,Pincode code	text
+Contact number	number
+
+
+Diabetic Status	"Choose from the list-
+ No diabetes(0),
+ Type I(1),
+ Type II(2),
+ Gestational Diabetes(4)"
+Diagnostic DM (years)	number
+CVD Status	Y(1)/N(0)/Blank(0)
+Diagnostic CVD (years)	number
+HT Status	Y(1)/N(0)/Blank(0)
+Diagnostic HT (years)	number

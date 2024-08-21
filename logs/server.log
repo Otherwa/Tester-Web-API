@@ -1,0 +1,189 @@
+info: Dec-14-2021 23:44:52: 	Listening on port 3005
+info: Dec-14-2021 23:46:13: 	App intialized
+info: Dec-14-2021 23:48:06: 	Listening on port 3005
+info: Dec-14-2021 23:48:21: 	App intialized
+info: Dec-14-2021 23:49:49: 	Listening on port 3005
+error: Dec-14-2021 23:49:58: 	Cannot read property 'length' of undefined
+info: Dec-14-2021 23:51:14: 	Listening on port 3005
+error: Dec-14-2021 23:51:25: 	TypeError: Cannot read property 'length' of undefined
+    at storeDataTOExcel1 (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\app.js:23:32)
+    at D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\app.js:67:11
+    at Layer.handle [as handle_request] (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:188:7)
+    at D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:214:15)
+    at D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Workspace\SPIT\SEM 2\Extra Fast Learner\excel_post\node_modules\express\lib\router\layer.js:95:5)
+info: Dec-18-2021 15:56:05: 	Listening on port 3005
+info: Dec-18-2021 15:56:56: 	Listening on port 3005
+info: Dec-18-2021 16:00:11: 	App intialized
+info: Dec-18-2021 17:00:56: 	App intialized
+info: Dec-18-2021 17:05:06: 	App intialized
+info: Dec-18-2021 17:07:14: 	Succssfully inserted data into excel
+info: Dec-18-2021 17:10:07: 	App intialized
+info: Dec-18-2021 17:10:40: 	App intialized
+info: Dec-18-2021 17:10:59: 	App intialized
+info: Dec-18-2021 17:11:00: 	App intialized
+info: Dec-18-2021 17:11:43: 	Listening on port 3005
+info: Dec-18-2021 17:15:02: 	App intialized
+info: Dec-18-2021 17:16:06: 	App intialized
+info: Dec-18-2021 17:16:07: 	App intialized
+info: Dec-18-2021 17:16:08: 	App intialized
+info: Dec-25-2021 19:03:30: 	Listening on port 3005
+info: Dec-25-2021 19:06:19: 	App intialized
+info: Dec-25-2021 19:06:39: 	App intialized
+info: Dec-25-2021 19:08:49: 	App intialized
+info: Dec-25-2021 19:09:11: 	App intialized
+info: Dec-25-2021 19:09:35: 	App intialized
+info: Dec-25-2021 19:09:55: 	App intialized
+info: Dec-25-2021 19:09:59: 	App intialized
+info: Dec-25-2021 19:10:06: 	App intialized
+info: Dec-25-2021 19:10:13: 	App intialized
+info: Dec-25-2021 19:11:47: 	App intialized
+info: Dec-25-2021 19:20:08: 	Listening on port 3005
+info: Dec-25-2021 19:20:14: 	App intialized
+info: Dec-25-2021 19:20:56: 	Listening on port 3005
+info: Dec-25-2021 19:21:01: 	App intialized
+info: Dec-25-2021 19:21:27: 	Listening on port 3005
+info: Dec-25-2021 19:21:32: 	App intialized
+info: Dec-25-2021 19:24:20: 	Listening on port 3005
+info: Dec-25-2021 19:24:24: 	App intialized
+info: Dec-25-2021 19:25:07: 	Listening on port 3005
+info: Dec-25-2021 19:25:12: 	App intialized
+info: Dec-25-2021 19:28:17: 	Listening on port 3005
+info: Dec-25-2021 19:28:26: 	App intialized
+info: Dec-25-2021 19:28:51: 	Listening on port 3005
+info: Dec-25-2021 19:28:57: 	App intialized
+info: Dec-25-2021 19:29:41: 	Listening on port 3005
+info: Dec-25-2021 19:29:46: 	App intialized
+info: Dec-25-2021 19:30:08: 	App intialized
+info: Dec-25-2021 19:30:22: 	App intialized
+info: Dec-25-2021 19:31:14: 	Listening on port 3005
+info: Dec-25-2021 19:31:31: 	Listening on port 3005
+info: Dec-25-2021 19:31:36: 	App intialized
+info: Dec-25-2021 19:32:23: 	Listening on port 3005
+info: Dec-25-2021 19:32:29: 	App intialized
+info: Dec-25-2021 19:32:51: 	App intialized
+info: Dec-25-2021 19:33:44: 	App intialized
+info: Dec-25-2021 19:36:37: 	App intialized
+info: Dec-25-2021 19:46:06: 	App intialized
+info: Dec-25-2021 19:57:17: 	App intialized
+info: Dec-25-2021 20:02:53: 	App intialized
+info: Dec-25-2021 20:05:41: 	App intialized
+info: Dec-25-2021 20:05:56: 	App intialized
+info: Dec-26-2021 10:55:58: 	Listening on port 3005
+info: Dec-26-2021 11:00:01: 	App intialized
+info: Dec-26-2021 11:03:22: 	App intialized
+info: Dec-26-2021 11:03:35: 	App intialized
+info: Dec-26-2021 11:06:49: 	App intialized
+info: Dec-26-2021 11:09:53: 	App intialized
+info: Dec-26-2021 11:10:27: 	App intialized
+info: Dec-26-2021 11:10:59: 	App intialized
+info: Dec-26-2021 11:12:10: 	App intialized
+info: Dec-26-2021 11:13:18: 	App intialized
+info: Dec-26-2021 11:22:39: 	App intialized
+info: Dec-26-2021 11:29:59: 	App intialized
+info: Dec-26-2021 11:30:12: 	App intialized
+info: Dec-26-2021 11:31:10: 	App intialized
+info: Dec-26-2021 11:40:12: 	App intialized
+info: Dec-26-2021 11:40:19: 	App intialized
+info: Dec-26-2021 11:40:24: 	App intialized
+info: Dec-26-2021 11:45:11: 	App intialized
+info: Dec-26-2021 11:45:25: 	App intialized
+info: Dec-26-2021 11:46:19: 	App intialized
+info: Dec-26-2021 11:48:20: 	App intialized
+info: Dec-26-2021 11:48:44: 	App intialized
+info: Dec-26-2021 11:49:02: 	App intialized
+info: Dec-26-2021 11:50:13: 	App intialized
+info: Dec-26-2021 11:51:03: 	App intialized
+info: Dec-26-2021 11:51:30: 	App intialized
+info: Dec-26-2021 11:51:55: 	App intialized
+info: Dec-26-2021 11:51:59: 	App intialized
+info: Dec-26-2021 11:52:11: 	App intialized
+info: Dec-26-2021 11:52:33: 	App intialized
+info: Dec-26-2021 11:53:40: 	App intialized
+info: Dec-26-2021 11:54:54: 	App intialized
+info: Dec-26-2021 11:55:38: 	App intialized
+info: Dec-26-2021 11:55:59: 	App intialized
+info: Dec-26-2021 11:58:19: 	App intialized
+info: Dec-26-2021 11:59:02: 	App intialized
+info: Dec-26-2021 11:59:39: 	App intialized
+info: Dec-26-2021 12:00:10: 	App intialized
+info: Dec-26-2021 12:01:29: 	App intialized
+info: Dec-26-2021 12:02:31: 	App intialized
+info: Dec-26-2021 12:03:30: 	App intialized
+info: Dec-26-2021 12:03:47: 	App intialized
+info: Dec-26-2021 12:04:35: 	App intialized
+info: Dec-26-2021 12:05:26: 	App intialized
+info: Dec-26-2021 12:08:17: 	App intialized
+info: Dec-26-2021 12:08:22: 	App intialized
+info: Dec-26-2021 12:08:31: 	App intialized
+info: Dec-26-2021 12:08:58: 	App intialized
+info: Dec-26-2021 12:09:54: 	App intialized
+info: Dec-26-2021 12:11:07: 	App intialized
+info: Dec-26-2021 12:12:23: 	App intialized
+info: Dec-26-2021 12:12:27: 	App intialized
+info: Dec-26-2021 12:13:19: 	App intialized
+info: Dec-26-2021 12:13:43: 	App intialized
+info: Dec-26-2021 12:14:09: 	App intialized
+info: Dec-26-2021 12:14:49: 	App intialized
+info: Dec-26-2021 12:14:55: 	App intialized
+info: Dec-26-2021 12:15:14: 	App intialized
+info: Dec-26-2021 12:17:52: 	Succssfully inserted data into excel
+info: Dec-26-2021 12:25:11: 	App intialized
+info: Dec-26-2021 12:25:13: 	App intialized
+info: Dec-26-2021 12:28:20: 	App intialized
+info: Dec-26-2021 12:28:23: 	App intialized
+info: Dec-26-2021 12:29:00: 	App intialized
+info: Dec-26-2021 12:29:04: 	App intialized
+info: Dec-26-2021 12:30:45: 	App intialized
+info: Dec-26-2021 13:04:44: 	Listening on port 3005
+info: Dec-30-2021 16:22:11: 	Listening on port 3005
+info: Dec-30-2021 16:33:37: 	App intialized
+info: Dec-30-2021 16:40:32: 	App intialized
+info: Dec-30-2021 16:47:34: 	App intialized
+info: Dec-30-2021 16:59:15: 	Listening on port 3005
+info: Dec-30-2021 16:59:24: 	App intialized
+info: Dec-30-2021 16:59:50: 	App intialized
+info: Dec-30-2021 17:03:25: 	App intialized
+info: Dec-30-2021 17:03:55: 	App intialized
+info: Dec-30-2021 17:06:12: 	Succssfully inserted data into excel
+info: Dec-30-2021 17:09:04: 	App intialized
+info: Dec-30-2021 17:09:35: 	App intialized
+info: Dec-30-2021 17:10:07: 	App intialized
+info: Dec-30-2021 17:10:34: 	App intialized
+info: Dec-30-2021 17:11:34: 	App intialized
+info: Dec-30-2021 17:12:05: 	App intialized
+info: Dec-30-2021 17:12:19: 	App intialized
+info: Dec-30-2021 17:12:27: 	App intialized
+info: Dec-30-2021 17:12:44: 	App intialized
+info: Dec-30-2021 17:14:09: 	App intialized
+info: Dec-30-2021 17:14:28: 	Succssfully inserted data into excel
+info: Dec-30-2021 17:15:59: 	App intialized
+info: Dec-30-2021 17:16:04: 	App intialized
+info: Dec-30-2021 17:16:18: 	Succssfully inserted data into excel
+info: Dec-30-2021 17:16:52: 	App intialized
+info: Dec-30-2021 17:22:58: 	App intialized
+info: Dec-30-2021 17:24:18: 	App intialized
+info: Jan-11-2022 15:45:57: 	Listening on port 3005
+info: Jan-11-2022 15:55:40: 	App intialized
+info: Jan-11-2022 15:59:28: 	Succssfully inserted data into excel
+info: Jun-08-2022 15:57:58: 	Listening on port 3005
+info: Jun-08-2022 15:58:10: 	App intialized
+info: Aug-21-2024 16:02:03: 	Listening on port 3005
+info: Aug-21-2024 16:09:41: 	App intialized
+info: Aug-21-2024 16:32:07: 	Listening on port 3005
+info: Aug-21-2024 16:40:27: 	App intialized
+info: Aug-21-2024 16:40:47: 	App intialized
+info: Aug-21-2024 16:41:17: 	App intialized
+info: Aug-21-2024 16:41:20: 	App intialized
+info: Aug-21-2024 16:42:10: 	App intialized
+info: Aug-21-2024 16:58:12: 	Listening on port 3005
