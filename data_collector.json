@@ -2,8 +2,8 @@
     "patientDetails": [
         {
             "label": "Name",
-            "type": "date",
-            "value": "",
+            "type": "text",
+            "value": "name",
             "required": "true"
         },
         {
@@ -19,13 +19,14 @@
             "options": [
                 {
                     "label": "Male",
-                    "value": "male"
+                    "value": "M-1"
                 },
                 {
                     "label": "Female",
-                    "value": "female"
+                    "value": "F-0"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
             "label": "Address",
@@ -59,23 +60,32 @@
             "value": "dstatus",
             "options": [
                 {
-                    "label": "No diabetes",
-                    "value": "nodiabetes"
-                },
-                {
-                    "label": "Type I",
-                    "value": "type1"
+                    "label": "No",
+                    "value": "NO-0"
                 },
                 {
                     "label": "Type II",
-                    "value": "type2"
+                    "value": "Type II-1"
+                },
+                {
+                    "label": "Type I",
+                    "value": "Type I-2"
+                },
+                {
+                    "label": "Prediabetic",
+                    "value": "Prediabetic-3"
+                },
+                {
+                    "label": "Gestational",
+                    "value": "Gestational-4"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Diagnostic",
+            "label": "Diagnostic DM (years)",
             "type": "number",
-            "value": "diagnostic",
+            "value": "diagnosticdm",
             "required": "true"
         },
         {
@@ -91,12 +101,7 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
-        },
-        {
-            "label": "Diagnostic CVD (years)",
-            "type": "number",
-            "value": "dcvd",
+            ],
             "required": "true"
         },
         {
@@ -112,75 +117,13 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
-        },
-        {
-            "label": "Diagnostic HT (years)",
-            "type": "number",
-            "value": "dht",
+            ],
             "required": "true"
-        }
-    ],
-    "bmi": [
-        {
-            "label": "Waist Circumference",
-            "type": "number",
-            "value": "waistcirum",
-            "required": "true"
-        },
-        {
-            "label": "Height(m)",
-            "type": "number",
-            "value": "height",
-            "required": "true"
-        },
-        {
-            "label": "Weight(kg)",
-            "type": "number",
-            "value": "weight",
-            "required": "true"
-        },
-        {
-            "label": "BMI",
-            "type": "number",
-            "value": "bmi",
-            "required": "true",
-            "formula":"form.weight/(form.height * form.height)"
         }
     ],
     "hrmd": [
         {
-            "label": "Angina",
-            "type": "dropdown",
-            "value": "angina",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Hearth Failure",
-            "type": "dropdown",
-            "value": "heartfailure",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Hearth Atrial Fibrilation",
+            "label": "Hearth Atrial Fibrilation?",
             "type": "dropdown",
             "value": "heartatrialfibrilation",
             "options": [
@@ -192,10 +135,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Hearth Attack",
+            "label": "Hearth Attack?",
             "type": "dropdown",
             "value": "heartattack",
             "options": [
@@ -207,10 +151,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Stroke",
+            "label": "Stroke?",
             "type": "dropdown",
             "value": "stroke",
             "options": [
@@ -222,10 +167,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Chest Pain",
+            "label": "Chest Pain?",
             "type": "dropdown",
             "value": "chestpain",
             "options": [
@@ -237,10 +183,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Pain in L Arm",
+            "label": "Pain in L Arm?",
             "type": "dropdown",
             "value": "painlarm",
             "options": [
@@ -252,40 +199,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Palpitations",
-            "type": "dropdown",
-            "value": "palpitations",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Dizziness",
-            "type": "dropdown",
-            "value": "dizziness",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "pacemaker",
+            "label": "Pacemaker?",
             "type": "dropdown",
             "value": "pacemaker",
             "options": [
@@ -297,27 +215,13 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
-        },
-        {
-            "label": "CA neuropathy",
-            "type": "dropdown",
-            "value": "caneuropathy",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
+            ],
+            "required": "true"
         }
     ],
     "footexam": [
         {
-            "label": "Ulcers L Foot",
+            "label": "Ulcers L Foot?",
             "type": "dropdown",
             "value": "ulcerslfoot",
             "options": [
@@ -329,10 +233,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Ulcers R Foot",
+            "label": "Ulcers R Foot?",
             "type": "dropdown",
             "value": "ulcersrfoot",
             "options": [
@@ -344,25 +249,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "General Foot",
-            "type": "dropdown",
-            "value": "generalfoot",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Foot Numbness",
+            "label": "Foot Numbness?",
             "type": "dropdown",
             "value": "footnumber",
             "options": [
@@ -374,25 +265,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Foot Loss Sensation",
-            "type": "dropdown",
-            "value": "footlosssensation",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Foot Tingling",
+            "label": "Foot Tingling?",
             "type": "dropdown",
             "value": "foottingling",
             "options": [
@@ -404,12 +281,13 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Foot Cold Sensation",
+            "label": "Feel Damage L Foot",
             "type": "dropdown",
-            "value": "footcoldsensation",
+            "value": "feeldamagelfoot",
             "options": [
                 {
                     "label": "No",
@@ -419,12 +297,13 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Foot Warm Sensation",
+            "label": "Feel Damage R Foot",
             "type": "dropdown",
-            "value": "footwarmsensation",
+            "value": "feeldamagerfoot",
             "options": [
                 {
                     "label": "No",
@@ -434,57 +313,19 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Foot peripheral neuropathy",
-            "type": "dropdown",
-            "value": "footperipheralneuropathy",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Foot peripheral vascular disease",
-            "type": "dropdown",
-            "value": "footperipheralvascular",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
+            "label": "Auto/Doppler",
+            "type": "text",
+            "value": "autodoppler",
+            "required": "true"
         }
     ],
     "kidenyexam": [
         {
-            "label": "Kidney Problem",
-            "type": "dropdown",
-            "value": "kproblem",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Bladder Problem",
+            "label": "Bladder Problem?",
             "type": "dropdown",
             "value": "bproblem",
             "options": [
@@ -496,55 +337,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Reflux",
-            "type": "dropdown",
-            "value": "reflux",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Increase Sweat",
-            "type": "dropdown",
-            "value": "incresesweat",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "epilepsy",
-            "type": "dropdown",
-            "value": "epilepsy",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Nausea after meal",
+            "label": "Nausea after meal?",
             "type": "dropdown",
             "value": "nauseaaftermeal",
             "options": [
@@ -556,10 +353,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Vomiting after meal",
+            "label": "Vomiting after meal?",
             "type": "dropdown",
             "value": "vomittingmeal",
             "options": [
@@ -571,70 +369,13 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
-        },
-        {
-            "label": "Bloating after meal",
-            "type": "dropdown",
-            "value": "bloatingmeal",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Abdominal Pain after meal",
-            "type": "dropdown",
-            "value": "abdominalpainmeal",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        }
-    ],
-    "eyeexam": [
-        {
-            "label": "Date Last Eye Test",
-            "type": "date",
-            "value": "datelasteyetest"
-        },
-        {
-            "label": "Diabetic Retinopathy",
-            "type": "dropdown",
-            "value": "diabeticretinopathy",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Diagnostic DM (years)",
-            "type": "number",
-            "value": "diagnosticdm",
+            ],
             "required": "true"
         }
     ],
     "generalqna": [
         {
-            "label": "Smoking",
+            "label": "Smoking?",
             "type": "dropdown",
             "value": "smoking",
             "options": [
@@ -646,10 +387,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Alcohol",
+            "label": "Alcohol?",
             "type": "dropdown",
             "value": "alcohol",
             "options": [
@@ -661,10 +403,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Family History DM",
+            "label": "Family History DM?",
             "type": "dropdown",
             "value": "familyhistoryDM",
             "options": [
@@ -676,10 +419,11 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
+            ],
+            "required": "true"
         },
         {
-            "label": "Family History CVD",
+            "label": "Family History CVD?",
             "type": "dropdown",
             "value": "familyhistorycvd",
             "options": [
@@ -691,27 +435,7 @@
                     "label": "Yes",
                     "value": "yes"
                 }
-            ]
-        },
-        {
-            "label": "Diet",
-            "type": "dropdown",
-            "value": "diet",
-            "options": [
-                {
-                    "label": "No",
-                    "value": "no"
-                },
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                }
-            ]
-        },
-        {
-            "label": "Exercise Duration (hrs/week)",
-            "type": "number",
-            "value": "exercisedur",
+            ],
             "required": "true"
         },
         {
@@ -728,90 +452,44 @@
                     "value": "moderate"
                 },
                 {
-                    "label": "low",
+                    "label": "Low",
                     "value": "low"
                 }
-            ]
+            ],
+            "required": "true"
         }
     ],
-    "ewingbatterytestrep": [
+    "bmi": [
         {
-            "label": "Ewing Score",
+            "label": "Weight (kg)",
             "type": "number",
-            "value": "ewingscore",
+            "value": "weight",
             "required": "true"
         },
         {
-            "label": "Ewing Result-level",
-            "type": "dropdown",
-            "value": "exerciseintensity",
-            "options": [
-                {
-                    "label": "list-normal",
-                    "value": "list-normal"
-                },
-                {
-                    "label": "early",
-                    "value": "early"
-                },
-                {
-                    "label": "definite",
-                    "value": "early"
-                },
-                {
-                    "label": "severe",
-                    "value": "early"
-                }
-            ]
+            "label": "BMI",
+            "type": "number",
+            "value": "bmi",
+            "required": "true"
         }
     ],
     "bloodreport": [
         {
-            "label": "Fasting Screening",
-            "type": "dropdown",
-            "value": "fastscreening",
-            "options": [
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                },
-                {
-                    "label": "No",
-                    "value": "no"
-                }
-            ]
+            "label": "Fasting Bloods",
+            "type": "text",
+            "value": "fastingbloods",
+            "required": "true"
         },
         {
-            "label": "Early Morning glucose (mmol/L)",
+            "label": "Early Morning Glucose (mmol/L)",
             "type": "number",
             "value": "earlymorningglucose",
             "required": "true"
         },
         {
-            "label": "Fasting bloods",
-            "type": "dropdown",
-            "value": "fastingbloods",
-            "options": [
-                {
-                    "label": "Yes",
-                    "value": "yes"
-                },
-                {
-                    "label": "No",
-                    "value": "no"
-                }
-            ]
-        },
-        {
-            "label": "Screening glucose (mmol/L)",
+            "label": "Fasting Glucose(mmol/L)",
             "type": "number",
-            "value": "screeningglucose",
-            "required": "true"
-        },
-        {
-            "label": "Glucose(mmol/L)",
-            "type": "number",
-            "value": "glucosemol",
+            "value": "fastingglucose",
             "required": "true"
         },
         {
@@ -821,143 +499,157 @@
             "required": "true"
         },
         {
-            "label": "Protein",
+            "label": "Urea(mmol/L)",
             "type": "number",
-            "value": "protein",
+            "value": "urea",
             "required": "true"
         },
         {
-            "label": "Glucose",
+            "label": "Creatinine(mmol/L)",
             "type": "number",
-            "value": "glucose",
+            "value": "creatinine",
             "required": "true"
         },
         {
-            "label": "Ketones",
+            "label": "Triglyceride(mmol/L)",
             "type": "number",
-            "value": "ketones",
+            "value": "triglyceride",
             "required": "true"
         },
         {
-            "label": "Haemoglobin",
+            "label": "HDL(mmol/L)",
             "type": "number",
-            "value": "haemoglobin",
+            "value": "hdl",
+            "required": "true"
+        },
+        {
+            "label": "LDL(mmol/L)",
+            "type": "number",
+            "value": "ldl",
+            "required": "true"
+        },
+        {
+            "label": "CVD % risk 5 years",
+            "type": "dropdown",
+            "value": "cvdrisk",
+            "options": [
+                {
+                    "label": "1%",
+                    "value": "1"
+                },
+                {
+                    "label": "2.5-5%",
+                    "value": "5"
+                },
+                {
+                    "label": "5-10%",
+                    "value": "10"
+                },
+                {
+                    "label": "10-15%",
+                    "value": "15"
+                },
+                {
+                    "label": "15-20%",
+                    "value": "20"
+                },
+                {
+                    "label": "20-25%",
+                    "value": "25"
+                },
+                {
+                    "label": "25-30%",
+                    "value": "30"
+                }
+            ],
+            "required": "true"
+        },
+        {
+            "label": "CRP",
+            "type": "number",
+            "value": "crp",
+            "required": "true"
+        },
+        {
+            "label": "GFR",
+            "type": "number",
+            "value": "gfr",
             "required": "true"
         }
     ],
-    "ecgin": [
+    "ewingbatterytestrep": [
         {
-            "label": "ECG interpretation 10sec",
-            "type": "text",
-            "value": "ecginterpretation10sec",
-            "required": "true"
-        },
-        {
-            "label": "Grade 10sec",
-            "type": "text",
-            "value": "grade10sec",
-            "required": "true"
-        },
-        {
-            "label": "PQ 10sec",
-            "type": "number",
-            "value": "pq10sec",
-            "required": "true"
-        },
-        {
-            "label": "QRS 10sec",
-            "type": "number",
-            "value": "qrs10sec",
-            "required": "true"
-        },
-        {
-            "label": "QTc 10sec",
-            "type": "number",
-            "value": "qtc10sec",
-            "required": "true"
-        },
-        {
-            "label": "QTc>1/2 (10sec)",
+            "label": "Ewing Result",
             "type": "dropdown",
-            "value": "QTc1210sec",
+            "value": "ewingresult",
             "options": [
                 {
-                    "label": "True",
+                    "label": "blank",
+                    "value": "0"
+                },
+                {
+                    "label": "normal",
                     "value": "1"
                 },
                 {
-                    "label": "False",
-                    "value": "0"
-                }
-            ]
-        },
-        {
-            "label": "QTd 10sec",
-            "type": "number",
-            "value": "qtd10sec",
-            "required": "true"
-        },
-        {
-            "label": "QRS axis (degree) 10sec",
-            "type": "number",
-            "value": "qrsaxis10sec",
-            "required": "true"
-        },
-        {
-            "label": "Interpretation 5min",
-            "type": "text",
-            "value": "interpretation5min",
-            "required": "true"
-        },
-        {
-            "label": "Grade 5min",
-            "type": "text",
-            "value": "grade5min",
-            "required": "true"
-        },
-        {
-            "label": "PQ 5min",
-            "type": "number",
-            "value": "pq5min",
-            "required": "true"
-        },
-        {
-            "label": "QRS 5min",
-            "type": "number",
-            "value": "qrs5min",
-            "required": "true"
-        },
-        {
-            "label": "QTc 5min",
-            "type": "number",
-            "value": "qtc5min",
-            "required": "true"
-        },
-        {
-            "label": "QTc>1/2 (5min)",
-            "type": "dropdown",
-            "value": "QTc>1/25",
-            "options": [
-                {
-                    "label": "True",
-                    "value": "1"
+                    "label": "early",
+                    "value": "2"
                 },
                 {
-                    "label": "False",
-                    "value": "0"
+                    "label": "definite",
+                    "value": "3"
+                },
+                {
+                    "label": "atypical",
+                    "value": "4"
+                },
+                {
+                    "label": "undefined",
+                    "value": "5"
+                },
+                {
+                    "label": "severe",
+                    "value": "6"
                 }
-            ]
-        },
+            ],
+            "required": "true"
+        }
+    ],
+    "bloodpressure": [
         {
-            "label": "QTd 5min",
+            "label": "Lying SBP Average",
             "type": "number",
-            "value": "qtd5min",
+            "value": "lyingsbpavg",
             "required": "true"
         },
         {
-            "label": "QRS axis (degree) 5min",
+            "label": "Lying DBP Average",
             "type": "number",
-            "value": "qrsaxis5min",
+            "value": "lyingdbpavg",
+            "required": "true"
+        },
+        {
+            "label": "Stand 1min SBP",
+            "type": "number",
+            "value": "stand1minsbp",
+            "required": "true"
+        },
+        {
+            "label": "Stand 1min DBP",
+            "type": "number",
+            "value": "stand1mindbp",
+            "required": "true"
+        },
+        {
+            "label": "Stand 3min SBP",
+            "type": "number",
+            "value": "stand3minsbp",
+            "required": "true"
+        },
+        {
+            "label": "Stand 3min DBP",
+            "type": "number",
+            "value": "stand3mindbp",
             "required": "true"
         }
     ],
@@ -972,13 +664,8 @@
             "value": "gMedicalDetails",
             "style": "subConatiner"
         },
-        {
-            "label": "BMI Control",
-            "value": "bmi",
-            "style": "subConatiner"
-        },
-        {
-            "label": "Heart related medical details",
+         {
+            "label": "HRMD",
             "value": "hrmd",
             "style": "subConatiner"
         },
@@ -993,18 +680,13 @@
             "style": "subConatiner"
         },
         {
-            "label": "Eye Examination",
-            "value": "eyeexam",
-            "style": "subConatiner"
-        },
-        {
             "label": "General Questionair",
             "value": "generalqna",
             "style": "subConatiner"
         },
         {
-            "label": "Ewing Battery Test reports",
-            "value": "ewingbatterytestrep",
+            "label": "BMI",
+            "value": "bmi",
             "style": "subConatiner"
         },
         {
@@ -1013,23 +695,14 @@
             "style": "subConatiner"
         },
         {
-            "label": "ECG Interpretation",
-            "value": "ecgin",
+            "label": "Ewing Result",
+            "value": "ewingbatterytestrep",
+            "style": "subConatiner"
+        },
+        {
+            "label": "Blood Pressure",
+            "value": "bloodpressure",
             "style": "subConatiner"
         }
-    ],
-    "excel2": {
-        "yes": "1",
-        "no": "0",
-        "nodiabetes":"0",
-        "type1":"1",
-        "type2":"2",
-        "list-normal":"1",
-        "early":"2",
-        "definite":"3",
-        "severe":"4",
-        "high":"3",
-        "moderate":"2",
-        "low":"1"
-    }
+    ]
 }
