@@ -2,8 +2,8 @@
     "patientDetails": [
         {
             "label": "Name",
-            "type": "text",
-            "value": "name",
+            "type": "date",
+            "value": "",
             "required": "true"
         },
         {
