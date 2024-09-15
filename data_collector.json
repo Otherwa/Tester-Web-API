@@ -700,7 +700,7 @@
             "style": "subConatiner"
         },
         {
-            "label": "Blood Pressure",
+            "label": "Blood Reports",
             "value": "bloodpressure",
             "style": "subConatiner"
         }

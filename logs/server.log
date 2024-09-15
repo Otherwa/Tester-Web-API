@@ -199,3 +199,85 @@ info: Aug-22-2024 15:59:23: 	App intialized
 info: Aug-22-2024 15:59:55: 	App intialized
 info: Sep-06-2024 19:52:22: 	Listening on port 3005
 info: Sep-06-2024 19:52:23: 	App intialized
+info: Sep-06-2024 19:59:59: 	App intialized
+info: Sep-06-2024 20:08:46: 	App intialized
+info: Sep-06-2024 20:09:08: 	App intialized
+info: Sep-06-2024 20:09:44: 	App intialized
+info: Sep-06-2024 20:10:13: 	App intialized
+info: Sep-06-2024 20:26:11: 	App intialized
+info: Sep-06-2024 20:26:48: 	App intialized
+info: Sep-06-2024 20:27:17: 	App intialized
+info: Sep-06-2024 20:29:06: 	App intialized
+info: Sep-06-2024 20:33:08: 	App intialized
+info: Sep-06-2024 20:36:20: 	App intialized
+info: Sep-06-2024 20:36:50: 	App intialized
+info: Sep-06-2024 20:37:05: 	App intialized
+info: Sep-14-2024 16:26:44: 	Server running on port 3000
+info: Sep-14-2024 16:27:58: 	Server running on port 3005
+info: Sep-14-2024 16:33:28: 	Server running on port 3005
+info: Sep-14-2024 16:35:33: 	Server running on port 3005
+info: Sep-14-2024 16:36:26: 	Server running on port 3005
+info: Sep-14-2024 16:38:27: 	Server running on port 3005
+info: Sep-14-2024 16:39:54: 	Server running on port 3005
+info: Sep-14-2024 16:44:59: 	Server running on port 3005
+info: Sep-15-2024 07:49:51: 	App initialized
+info: Sep-15-2024 07:54:42: 	App initialized
+info: Sep-15-2024 08:00:57: 	App initialized
+info: Sep-15-2024 08:01:43: 	App initialized
+info: Sep-15-2024 08:02:03: 	App initialized
+info: Sep-15-2024 08:02:13: 	App initialized
+info: Sep-15-2024 08:02:23: 	App initialized
+info: Sep-15-2024 08:05:19: 	App initialized
+info: Sep-15-2024 08:05:41: 	App initialized
+info: Sep-15-2024 08:07:20: 	App initialized
+info: Sep-15-2024 08:07:55: 	App initialized
+info: Sep-15-2024 08:08:18: 	App initialized
+info: Sep-15-2024 08:08:39: 	App initialized
+info: Sep-15-2024 08:09:17: 	App initialized
+info: Sep-15-2024 08:10:39: 	App initialized
+info: Sep-15-2024 08:10:50: 	App initialized
+error: Sep-15-2024 08:12:07: 	Error: File not found: ./heart.xlsx
+    at XLSX.readFile (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\exceljs\lib\xlsx\xlsx.js:51:13)
+    at async storeDataTOExcel1 (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:46:12)
+    at async C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:55:5
+info: Sep-15-2024 08:19:31: 	App initialized
+info: Sep-15-2024 08:20:07: 	App initialized
+info: Sep-15-2024 08:20:12: 	App initialized
+info: Sep-15-2024 08:20:36: 	App initialized
+info: Sep-15-2024 08:56:41: 	App initialized
+info: Sep-15-2024 08:57:28: 	App initialized
+info: Sep-15-2024 08:57:54: 	App initialized
+info: Sep-15-2024 08:59:30: 	App initialized
+info: Sep-15-2024 09:00:46: 	App initialized
+info: Sep-15-2024 09:00:50: 	App initialized
+info: Sep-15-2024 09:01:05: 	App initialized
+info: Sep-15-2024 09:03:24: 	App initialized
+info: Sep-15-2024 09:03:28: 	App initialized
+error: Sep-15-2024 09:05:25: 	Error: File not found: ./heart.xlsx
+    at XLSX.readFile (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\exceljs\lib\xlsx\xlsx.js:51:13)
+    at async storeDataTOExcel1 (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:46:12)
+    at async C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:55:5
+info: Sep-15-2024 09:07:39: 	Server running on port 3005
+info: Sep-15-2024 09:07:48: 	App initialized
+info: Sep-15-2024 09:12:58: 	App initialized
+info: Sep-15-2024 09:15:39: 	Server running on port 3005
+info: Sep-15-2024 09:15:47: 	App initialized
+info: Sep-15-2024 09:19:18: 	App initialized
+info: Sep-15-2024 09:19:26: 	App initialized
+info: Sep-15-2024 09:20:06: 	App initialized
+info: Sep-15-2024 09:22:07: 	Server running on port 3005
+info: Sep-15-2024 09:22:45: 	App initialized
+error: Sep-15-2024 09:23:38: 	ReferenceError: con is not defined
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:61:5
+    at Layer.handle [as handle_request] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:48:5
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:261:12
+    at getSecret (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:101:10)
+    at authenticateToken (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:43:7)
+    at Layer.handle [as handle_request] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\route.js:149:13)
+info: Sep-15-2024 09:24:08: 	Server running on port 3005
+info: Sep-15-2024 09:29:59: 	Server running on port 3005
+info: Sep-15-2024 09:30:12: 	Successfully inserted patient data into MongoDB

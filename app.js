@@ -1,164 +1,130 @@
-let express = require("express");
-let app = express();
-let Excel = require("exceljs");
-let bodyParser = require("body-parser");
+require('dotenv').config();
+
 const cors = require("cors");
-const fs = require("fs");
 const logger = require("./utils/logger");
-<<<<<<< HEAD
-let http = require("http");
-let https = require("https");
-const bcrypt = require('bcrypt');
-const { body, validationResult } = require('express-validator');
-=======
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const User = require('./models/User');
+const PatientDataSchema = require('./models/UserFormData');
+const fs = require("fs");
 
 
-
->>>>>>> 910d3d59717415e41fbd5f92f77bc62355a693b9
+const app = express();
+const JWT_SECRET = 'Tatakae';
 
 const corsOptions = {
   origin: "*",
-  credentials: true, //access-control-allow-credentials:true
+  credentials: false,
   optionSuccessStatus: 200,
 };
 
-app.use(bodyParser.json());
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); //
 
-app.use(express.json());
+// Middleware to authenticate token
+const authenticateToken = (req, res, next) => {
+  // Extract the token from the Authorization header
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; // Extract token from "Bearer <token>"
 
-const users = [];
+  // Check if token exists
+  if (!token) return res.status(401).send({ message: 'No token provided' });
 
-async function storeDataTOExcel1(dataWithKey) {
-  let wbColumn = [];
-  let userdata = dataWithKey.data;
-  let template = dataWithKey.keys;
-  for (let i = 0; i < template.length; i++) {
-    wbColumn.push({
-      header: template[i].label,
-      key: template[i].value,
-      width: 32,
-    });
-  }
-  const workbook = new Excel.Workbook();
-  let wb = await workbook.xlsx.readFile("./heart.xlsx");
-  wb = wb.getWorksheet(1);
-  wb.columns = wbColumn;
-  wb.addRow(userdata);
-  await workbook.xlsx.writeFile("./heart.xlsx");
-}
+  // Verify the token
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) return res.status(403).send({ message: 'Failed to authenticate token' });
+
+    // Add userId to the request object
+    req.userId = decoded.userId;
+    next();
+  });
+};
 
 
 
-//readExcel();
-app.post("/postexcel", async (req, res) => {
+app.post("/postdata", authenticateToken, async (req, res) => {
   try {
-    await storeDataTOExcel1(req.body);
-    logger.info("Succssfully inserted data into excel");
-    res.send({
-      status: "success",
+    const patientData = new PatientDataSchema({
+      ...req.body.data,
+      user_id: req.userId, // Link patient data to the user
     });
+
+    await patientData.save();
+    logger.info("Successfully inserted patient data into MongoDB");
+    res.send({ status: "success" });
   } catch (err) {
-    logger.error(err.stack);
-    res.send({
-      status: "unsuccess",
-      msg: err.message,
-    });
+    if (err.name === 'ValidationError') {
+      let errors = {};
+      Object.keys(err.errors).forEach((key) => {
+        errors[key] = err.errors[key].message;
+      });
+      res.status(400).send({ status: "validation_error", errors });
+    } else {
+      logger.error(err.stack);
+      res.status(500).send({ status: "error", message: err.message });
+    }
   }
 });
 
 app.get("/formjson", async (req, res) => {
   try {
-    logger.info("App intialized");
+    logger.info("App initialized");
     let data = fs.readFileSync("data_collector.json");
-    let formatedData = JSON.parse(data.toString());
-    res.json(formatedData);
+    let formattedData = JSON.parse(data.toString());
+    res.json(formattedData);
   } catch (error) {
-    logger.error(err.stack);
-    res.send({
-      status: "unsuccess",
-      msg: err.message,
-    });
+    logger.error(error.stack);
+    res.send({ status: "unsuccess", msg: error.message });
   }
 });
 
-// Register
-app.post(
-  "/register",
-  [
-    body("phoneNumber").isNumeric().withMessage("Please enter numbers").isLength({min:10,max:10}).withMessage("Enter correct number."),
-    body("password")
-      .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters long"),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+// Register route
+app.post('/register', async (req, res) => {
+  const { email, password } = req.body;
+  console.log(req.body)
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const user = new User({ email, password: hashedPassword });
 
-    const { phoneNumber, password } = req.body;
-
-    const userExists = users.find((user) => user.phoneNumber === phoneNumber);
-    if (userExists) {
-      return res.status(400).json({ message: "User already exists" });
-    }
-
-    try {
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = { phoneNumber, password: hashedPassword };
-      users.push(newUser);
-      res.status(201).json({ message: "User registered successfully" });
-    } catch (error) {
-      res.status(500).json({ message: "Error registering user", error });
-    }
+  try {
+    await user.save();
+    res.send({ message: 'User registered successfully' });
+  } catch (error) {
+    res.status(500).send({ message: 'Error registering user' });
   }
-);
+});
 
-//login
-app.post(
-  "/login",
-  [
-    body("phoneNumber")
-      .isNumeric()
-      .withMessage("Please enter numbers")
-      .isLength({ min: 10, max: 10 })
-      .withMessage("Enter a valid phone number."),
-    body("password")
-      .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters long"),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+// Login route
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
 
-    const { phoneNumber, password } = req.body;
-
-    const user = users.find((user) => user.phoneNumber === phoneNumber);
-    if (!user) {
-      return res.status(400).json({ message: "User not found" });
-    }
-
-    try {
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(400).json({ message: "Invalid credentials" });
-      }
-
-      const token = jwt.sign({ phoneNumber: user.phoneNumber }, "secretKey", {
-        expiresIn: "1h",
-      });
-
-      res.status(200).json({ message: "Login successful", token });
-    } catch (error) {
-      res.status(500).json({ message: "Error logging in", error });
-    }
+  if (!user) {
+    return res.status(404).send({ message: 'User not found' });
   }
-);
 
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    return res.status(400).send({ message: 'Invalid credentials' });
+  }
+
+  const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
+  res.send({ token, message: 'Login successful' });
+});
+
+// Protected route (Dashboard)
+app.get('/dashboard', authenticateToken, (req, res) => {
+  res.send({ message: 'Welcome to the dashboard!' });
+});
 
 app.listen(3005, () => {
-  logger.info("Listening on port 3005");
+  logger.info("Server running on port 3005");
 });

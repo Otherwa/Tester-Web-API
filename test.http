@@ -1,1 +1,11 @@
 GET http://localhost:3005/formjson
+
+###
+
+POST http://localhost:3005/register
+Content-Type: application/json
+
+{
+  "email": "atharvdesai2002@gmail.com",
+  "password": "12345678"
+}
