@@ -89,15 +89,16 @@ app.get("/formjson", async (req, res) => {
 
 // Register route
 app.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, role, phone } = req.body;
   console.log(req.body)
   const hashedPassword = await bcrypt.hash(password, 10);
-  const user = new User({ email, password: hashedPassword });
+  const user = new User({ email, password: hashedPassword, role, phone });
 
   try {
     await user.save();
     res.send({ message: 'User registered successfully' });
   } catch (error) {
+    console.log(error)
     res.status(500).send({ message: 'Error registering user' });
   }
 });
@@ -125,6 +126,36 @@ app.get('/dashboard', authenticateToken, (req, res) => {
   res.send({ message: 'Welcome to the dashboard!' });
 });
 
-app.listen(3005, () => {
-  logger.info("Server running on port 3005");
+
+// Profile route
+app.get('/profile', authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId); // Fetch user by ID from token
+    if (!user) return res.status(404).send({ message: 'User not found' });
+    res.json({ name: user.name, email: user.email, phone: user.phone, role: user.role });
+  } catch (error) {
+    res.status(500).send({ message: 'Error fetching user profile' });
+  }
+});
+
+app.put('/profile', authenticateToken, async (req, res) => {
+  try {
+    const { userId } = req;
+    const { name, email, phone, role } = req.body;
+
+    // Find the user by ID and update the profile
+    const updatedUser = await User.findByIdAndUpdate(userId, { name, email, phone, role }, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).send({ message: 'User not found' });
+    }
+
+    res.send(updatedUser);
+  } catch (error) {
+    res.status(500).send({ message: 'Error updating profile', error });
+  }
+});
+
+app.listen(10000, () => {
+  logger.info("Server running on port 10000");
 });

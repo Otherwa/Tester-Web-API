@@ -281,3 +281,18 @@ error: Sep-15-2024 09:23:38: 	ReferenceError: con is not defined
 info: Sep-15-2024 09:24:08: 	Server running on port 3005
 info: Sep-15-2024 09:29:59: 	Server running on port 3005
 info: Sep-15-2024 09:30:12: 	Successfully inserted patient data into MongoDB
+info: Sep-15-2024 09:31:31: 	Server running on port 3005
+info: Sep-15-2024 09:32:11: 	App initialized
+info: Sep-15-2024 09:32:54: 	Successfully inserted patient data into MongoDB
+info: Sep-15-2024 09:52:04: 	Server running on port 3005
+info: Sep-15-2024 09:52:56: 	Server running on port 3005
+info: Sep-15-2024 09:53:24: 	Server running on port 3005
+info: Sep-15-2024 09:53:32: 	Server running on port 3005
+info: Sep-15-2024 09:54:13: 	App initialized
+info: Sep-15-2024 09:54:53: 	Successfully inserted patient data into MongoDB
+info: Sep-15-2024 10:00:31: 	Server running on port 3005
+info: Sep-15-2024 10:01:33: 	Server running on port 3005
+info: Sep-15-2024 10:03:28: 	Server running on port 3005
+info: Sep-15-2024 10:12:02: 	Server running on port 3005
+info: Sep-15-2024 10:13:28: 	App initialized
+info: Sep-15-2024 10:15:30: 	Server running on port 10000
