@@ -1,13 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+
+const familyMemberSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    relation: { type: String, required: true },
+    contact: { type: String, required: true },
+});
 
 const userSchema = new mongoose.Schema({
     name: { type: String },
-    email: { type: String, required: true, unique: true },
+    email: { type: String, unique: true },
     password: { type: String, required: true },
-    role: { type: String, required: true },
-    phone: { type: String, required: true },
-}, {
-    timestamps: true
+    phone: { type: String },
+    role: { type: String },
+    familyDetails: [familyMemberSchema], // Array of family member details
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User;

@@ -7,13 +7,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('./models/User');
+const User = require('./models/User'); // Ensure this User model contains the family member schema
 const PatientDataSchema = require('./models/UserFormData');
 const fs = require("fs");
 
-
 const app = express();
-const JWT_SECRET = 'Tatakae';
+const JWT_SECRET = process.env.JWT_SECRET || 'Tatakae'; // Use environment variable for secret
 
 const corsOptions = {
   origin: "*",
@@ -21,41 +20,38 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
+// Middleware
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); //
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Middleware to authenticate token
 const authenticateToken = (req, res, next) => {
-  // Extract the token from the Authorization header
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1]; // Extract token from "Bearer <token>"
 
-  // Check if token exists
   if (!token) return res.status(401).send({ message: 'No token provided' });
 
-  // Verify the token
   jwt.verify(token, JWT_SECRET, (err, decoded) => {
     if (err) return res.status(403).send({ message: 'Failed to authenticate token' });
 
-    // Add userId to the request object
     req.userId = decoded.userId;
     next();
   });
 };
 
-
-
+// Patient data route
 app.post("/postdata", authenticateToken, async (req, res) => {
   try {
     const patientData = new PatientDataSchema({
       ...req.body.data,
-      user_id: req.userId, // Link patient data to the user
+      user_id: req.userId,
     });
 
     await patientData.save();
@@ -75,6 +71,7 @@ app.post("/postdata", authenticateToken, async (req, res) => {
   }
 });
 
+// Get JSON for form
 app.get("/formjson", async (req, res) => {
   try {
     logger.info("App initialized");
@@ -90,7 +87,6 @@ app.get("/formjson", async (req, res) => {
 // Register route
 app.post('/register', async (req, res) => {
   const { email, password, role, phone } = req.body;
-  console.log(req.body)
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = new User({ email, password: hashedPassword, role, phone });
 
@@ -98,7 +94,7 @@ app.post('/register', async (req, res) => {
     await user.save();
     res.send({ message: 'User registered successfully' });
   } catch (error) {
-    console.log(error)
+    logger.error(error.stack);
     res.status(500).send({ message: 'Error registering user' });
   }
 });
@@ -106,6 +102,8 @@ app.post('/register', async (req, res) => {
 // Login route
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
+
+  console.log(req.body)
   const user = await User.findOne({ email });
 
   if (!user) {
@@ -118,7 +116,7 @@ app.post('/login', async (req, res) => {
   }
 
   const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
-  res.send({ token, message: 'Login successful' });
+  res.send({ token, message: 'Login successful', role: user.role });
 });
 
 // Protected route (Dashboard)
@@ -126,25 +124,26 @@ app.get('/dashboard', authenticateToken, (req, res) => {
   res.send({ message: 'Welcome to the dashboard!' });
 });
 
-
-// Profile route
+// Profile route (GET)
 app.get('/profile', authenticateToken, async (req, res) => {
   try {
-    const user = await User.findById(req.userId); // Fetch user by ID from token
+    const user = await User.findById(req.userId);
     if (!user) return res.status(404).send({ message: 'User not found' });
-    res.json({ name: user.name, email: user.email, phone: user.phone, role: user.role });
+
+    // Return user details along with family members
+    res.json({ name: user.name, email: user.email, phone: user.phone, role: user.role, familyDetails: user.familyDetails });
   } catch (error) {
     res.status(500).send({ message: 'Error fetching user profile' });
   }
 });
 
+// Profile route (PUT)
 app.put('/profile', authenticateToken, async (req, res) => {
   try {
     const { userId } = req;
-    const { name, email, phone, role } = req.body;
+    const { name, email, phone, role, familyDetails } = req.body; // Include family details if needed
 
-    // Find the user by ID and update the profile
-    const updatedUser = await User.findByIdAndUpdate(userId, { name, email, phone, role }, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(userId, { name, email, phone, role, familyDetails }, { new: true });
 
     if (!updatedUser) {
       return res.status(404).send({ message: 'User not found' });
@@ -156,6 +155,7 @@ app.put('/profile', authenticateToken, async (req, res) => {
   }
 });
 
-app.listen(10000, () => {
-  logger.info("Server running on port 10000");
+// Start server
+app.listen(3005, () => {
+  logger.info("Server running on port 3005");
 });

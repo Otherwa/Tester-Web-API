@@ -296,3 +296,41 @@ info: Sep-15-2024 10:03:28: 	Server running on port 3005
 info: Sep-15-2024 10:12:02: 	Server running on port 3005
 info: Sep-15-2024 10:13:28: 	App initialized
 info: Sep-15-2024 10:15:30: 	Server running on port 10000
+info: Sep-24-2024 20:33:38: 	Server running on port 10000
+info: Sep-24-2024 20:44:42: 	Server running on port 3005
+info: Sep-24-2024 20:50:51: 	App initialized
+info: Sep-24-2024 20:51:08: 	App initialized
+info: Sep-24-2024 21:07:29: 	Server running on port 3005
+info: Sep-24-2024 21:30:15: 	App initialized
+info: Sep-24-2024 21:34:27: 	App initialized
+info: Sep-24-2024 21:34:52: 	App initialized
+info: Sep-24-2024 21:35:12: 	App initialized
+info: Sep-24-2024 21:35:27: 	App initialized
+info: Sep-24-2024 21:35:47: 	App initialized
+info: Sep-24-2024 21:36:13: 	App initialized
+info: Sep-24-2024 21:36:50: 	App initialized
+info: Sep-24-2024 21:38:07: 	App initialized
+info: Sep-24-2024 21:39:11: 	App initialized
+info: Sep-24-2024 21:39:21: 	App initialized
+info: Sep-24-2024 21:40:09: 	App initialized
+info: Sep-24-2024 21:49:18: 	Server running on port 3005
+info: Sep-24-2024 21:49:48: 	App initialized
+info: Sep-24-2024 21:50:39: 	App initialized
+info: Sep-24-2024 21:51:19: 	App initialized
+info: Sep-24-2024 21:57:54: 	Server running on port 3005
+info: Sep-24-2024 22:28:05: 	App initialized
+info: Sep-24-2024 22:29:21: 	App initialized
+info: Sep-24-2024 22:31:25: 	App initialized
+info: Sep-24-2024 22:34:24: 	Server running on port 3005
+info: Sep-24-2024 22:36:08: 	Server running on port 3005
+info: Sep-24-2024 22:37:43: 	Server running on port 3005
+error: Sep-24-2024 22:38:03: 	ValidationError: User validation failed: name: Path `name` is required.
+    at Document.invalidate (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongoose\lib\document.js:3312:32)
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongoose\lib\document.js:3073:17
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+info: Sep-24-2024 22:38:59: 	Server running on port 3005
+info: Sep-24-2024 22:40:07: 	Server running on port 3005
+info: Sep-24-2024 22:41:33: 	Server running on port 3005
+info: Sep-24-2024 22:42:35: 	Server running on port 3005
+info: Sep-24-2024 22:51:26: 	Server running on port 3005
