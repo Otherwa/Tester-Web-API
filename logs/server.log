@@ -334,3 +334,51 @@ info: Sep-24-2024 22:40:07: 	Server running on port 3005
 info: Sep-24-2024 22:41:33: 	Server running on port 3005
 info: Sep-24-2024 22:42:35: 	Server running on port 3005
 info: Sep-24-2024 22:51:26: 	Server running on port 3005
+info: Sep-25-2024 22:41:19: 	Server running on port 3005
+info: Sep-25-2024 22:54:06: 	App initialized
+info: Sep-25-2024 22:58:50: 	App initialized
+info: Sep-25-2024 22:59:00: 	App initialized
+info: Sep-25-2024 22:59:12: 	App initialized
+info: Sep-25-2024 23:00:09: 	App initialized
+info: Sep-25-2024 23:00:29: 	App initialized
+info: Sep-25-2024 23:05:51: 	Successfully inserted patient data into MongoDB
+info: Sep-25-2024 23:07:30: 	App initialized
+info: Sep-25-2024 23:10:55: 	Successfully inserted patient data into MongoDB
+info: Sep-25-2024 23:17:26: 	App initialized
+info: Sep-25-2024 23:18:10: 	Successfully inserted patient data into MongoDB
+info: Sep-25-2024 23:39:55: 	App initialized
+info: Sep-25-2024 23:41:19: 	App initialized
+info: Sep-25-2024 23:41:39: 	App initialized
+info: Sep-25-2024 23:44:19: 	App initialized
+info: Sep-25-2024 23:45:18: 	App initialized
+info: Sep-25-2024 23:45:50: 	App initialized
+info: Sep-25-2024 23:46:10: 	App initialized
+info: Sep-25-2024 23:46:16: 	App initialized
+info: Sep-25-2024 23:46:36: 	App initialized
+info: Sep-25-2024 23:47:02: 	App initialized
+info: Sep-25-2024 23:48:20: 	App initialized
+info: Sep-25-2024 23:48:44: 	App initialized
+info: Sep-25-2024 23:49:06: 	App initialized
+info: Sep-25-2024 23:49:10: 	App initialized
+info: Sep-25-2024 23:49:34: 	App initialized
+error: Sep-25-2024 23:50:25: 	MongoServerError: E11000 duplicate key error collection: Tester.patientdatas index: _id_ dup key: { _id: ObjectId('66f2f3cf8b322c615e79ebaf') }
+    at InsertOneOperation.execute (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\collection.js:154:16)
+error: Sep-25-2024 23:50:37: 	MongoServerError: E11000 duplicate key error collection: Tester.patientdatas index: _id_ dup key: { _id: ObjectId('66f2f3cf8b322c615e79ebaf') }
+    at InsertOneOperation.execute (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\collection.js:154:16)
+info: Sep-25-2024 23:52:49: 	Successfully inserted patient data into MongoDB
+info: Sep-25-2024 23:54:17: 	Server running on port (10000
+info: Sep-25-2024 23:54:22: 	App initialized
+error: Sep-25-2024 23:55:17: 	MongoServerError: E11000 duplicate key error collection: Tester.patientdatas index: _id_ dup key: { _id: ObjectId('66f2f3cf8b322c615e79ebaf') }
+    at InsertOneOperation.execute (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\mongodb\lib\collection.js:154:16)
+info: Sep-25-2024 23:57:01: 	Server running on port (10000
+info: Sep-25-2024 23:57:04: 	Successfully inserted patient data into MongoDB
+info: Sep-26-2024 00:08:18: 	Server running on port (10000

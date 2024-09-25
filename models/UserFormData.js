@@ -4,9 +4,8 @@ const mongoose = require('mongoose');
 const PatientDataSchema = new mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',  // Reference to the User model
-        required: true // Required field
     },
+    type: String,
     name: String,
     age: String,
     gender: String,

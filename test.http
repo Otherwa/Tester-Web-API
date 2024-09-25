@@ -1,8 +1,8 @@
-GET https://tester-web-api.onrender.com//formjson
+GET http://localhost:10000//formjson
 
 ###
 
-POST https://tester-web-api.onrender.com//register
+POST http://localhost:10000//register
 Content-Type: application/json
 
 {

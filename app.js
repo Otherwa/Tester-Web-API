@@ -49,12 +49,28 @@ const authenticateToken = (req, res, next) => {
 // Patient data route
 app.post("/postdata", authenticateToken, async (req, res) => {
   try {
-    const patientData = new PatientDataSchema({
-      ...req.body.data,
-      user_id: req.userId,
-    });
+    if (req.body.data._id) {
+      const { _id, ...rest } = req.body.data;
 
-    await patientData.save();
+      const patientData = new PatientDataSchema({
+        ...rest,
+        user_id: _id,
+        type: 'family_member'
+      });
+
+
+      await patientData.save();
+
+    } else {
+      const patientData = new PatientDataSchema({
+        ...req.body.data,
+        user_id: req.userId,
+        type: 'user'
+      });
+
+      await patientData.save();
+    }
+
     logger.info("Successfully inserted patient data into MongoDB");
     res.send({ status: "success" });
   } catch (err) {
@@ -155,7 +171,30 @@ app.put('/profile', authenticateToken, async (req, res) => {
   }
 });
 
+app.get('/patients', authenticateToken, async (req, res) => {
+  try {
+    // Find users with the role of "patient"
+    const patients = await User.find({ role: 'patient' });
+
+    // Fetch corresponding patient data for each patient
+    const patientDataPromises = patients.map(async (patient) => {
+      const patientData = await PatientDataSchema.find({ user_id: patient._id });
+      return {
+        user: patient,
+        data: patientData,
+      };
+    });
+
+    const patientData = await Promise.all(patientDataPromises);
+
+    res.json(patientData);
+  } catch (error) {
+    logger.error(error.stack);
+    res.status(500).send({ message: 'Error fetching patient data' });
+  }
+});
+
 // Start server
-app.listen(3005, () => {
-  logger.info("Server running on port 3005");
+app.listen(10000, () => {
+  logger.info("Server running on port (10000");
 });
