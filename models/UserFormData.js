@@ -58,7 +58,8 @@ const PatientDataSchema = new mongoose.Schema({
     stand1minsbp: String,
     stand1mindbp: String,
     stand3minsbp: String,
-    stand3mindbp: String
+    stand3mindbp: String,
+    reports: Object
 }, {
     timestamps: true
 });

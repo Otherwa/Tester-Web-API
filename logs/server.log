@@ -382,3 +382,35 @@ error: Sep-25-2024 23:55:17: 	MongoServerError: E11000 duplicate key error colle
 info: Sep-25-2024 23:57:01: 	Server running on port (10000
 info: Sep-25-2024 23:57:04: 	Successfully inserted patient data into MongoDB
 info: Sep-26-2024 00:08:18: 	Server running on port (10000
+info: Oct-04-2024 14:21:03: 	Server running on port (10000
+info: Oct-04-2024 14:23:21: 	App initialized
+info: Oct-04-2024 14:26:23: 	App initialized
+info: Oct-04-2024 14:26:28: 	App initialized
+info: Oct-04-2024 14:27:32: 	App initialized
+info: Oct-26-2024 17:12:17: 	Server running on port (10000
+info: Oct-26-2024 17:13:02: 	App initialized
+info: Oct-26-2024 17:13:07: 	App initialized
+info: Oct-26-2024 17:13:22: 	App initialized
+info: Oct-26-2024 17:30:57: 	Server running on port (10000
+info: Oct-26-2024 17:36:03: 	Server running on port (10000
+info: Oct-26-2024 17:42:47: 	Server running on port (10000
+info: Oct-26-2024 17:43:56: 	Server running on port (10000
+info: Oct-26-2024 18:11:56: 	App initialized
+info: Oct-26-2024 18:14:55: 	Successfully inserted patient data into MongoDB
+info: Oct-26-2024 20:20:19: 	App initialized
+info: Oct-26-2024 20:49:54: 	App initialized
+info: Oct-26-2024 20:50:25: 	Server running on port (10000
+info: Oct-26-2024 20:50:28: 	App initialized
+error: Oct-26-2024 20:50:30: 	ReferenceError: patientId is not defined
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:203:5
+    at Layer.handle [as handle_request] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:46:5
+    at C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:261:12
+    at getSecret (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\jsonwebtoken\verify.js:101:10)
+    at authenticateToken (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\app.js:42:7)
+    at Layer.handle [as handle_request] (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\athar\OneDrive\Desktop\ICONIC_NEW_APP\Web-API\node_modules\express\lib\router\route.js:149:13)
+info: Oct-26-2024 20:51:19: 	Server running on port (10000
+info: Oct-26-2024 20:51:22: 	App initialized

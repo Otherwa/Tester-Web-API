@@ -1,11 +1,73 @@
-GET https://tester-web-api.onrender.com//formjson
+GET http://localhost:10000//formjson
 
 ###
 
-POST https://tester-web-api.onrender.com//register
+POST http://localhost:10000//register
 Content-Type: application/json
 
 {
   "email": "atharvdesai2002@gmail.com",
   "password": "12345678"
+}
+
+###
+POST http://localhost:5000/predict
+Content-Type: application/json
+
+{
+  "gender": "Male",
+  "patientAge": 59,
+  "diagnosticDmYears": 0,
+  "smoking": "No",
+  "alcohol": "No",
+  "bmi": 23.67,
+  "lyingSbpAvg": 120,
+  "stand3MinSbp": 90,
+  "lyingDbpAvg": 90,
+  "stand3MinDbp": 80,
+  "htStatus": "Normal",
+  "hrBpm": 0,
+  "waistCircumference": 0,
+  "fastingGlucose": 5.7,
+  "hba1c": 2.9,
+  "urea": 6,
+  "creatinine": 0,
+  "triglyceride": 0.96,
+  "hdl": 1.56,
+  "ldl": 2.9,
+  "cvdRisk": 10,
+  "crp": 0,
+  "gfr": 0,
+  "ewingResult": 0
+}
+
+###
+POST http://localhost:5000/predict
+Content-Type: application/json
+
+{
+    "gender": 1, 
+    "patientAge": 80, 
+    "diagnosticDmYears": 1, 
+    "smoking": 0, 
+    "alcohol": 0, 
+    "bmi": 24.34, 
+    "lyingSbpAvg": 135, 
+    "stand3MinSbp": 75, 
+    "lyingDbpAvg": 125, 
+    "stand3MinDbp": 85, 
+    "htStatus": 1, 
+    "hrBpm": 75, 
+    "waistCircumference": 73, 
+    "fastingGlucose": 1, 
+    "hba1c": 57, 
+    "urea": 98, 
+    "creatinine": 5.5, 
+    "triglyceride": 0, 
+    "hdl": 0, 
+    "ldl": 66, 
+    "cvdRisk": 1.1, 
+    "crp": 1.4, 
+    "gfr": 0.9, 
+    "ewingResult": 30
 }

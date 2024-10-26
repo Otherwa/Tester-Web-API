@@ -10,6 +10,7 @@ const jwt = require('jsonwebtoken');
 const User = require('./models/User'); // Ensure this User model contains the family member schema
 const PatientDataSchema = require('./models/UserFormData');
 const fs = require("fs");
+const axios = require('axios');
 
 const app = express();
 const JWT_SECRET = process.env.JWT_SECRET || 'Tatakae'; // Use environment variable for secret
@@ -193,6 +194,91 @@ app.get('/patients', authenticateToken, async (req, res) => {
     res.status(500).send({ message: 'Error fetching patient data' });
   }
 });
+
+app.get('/records', authenticateToken, async (req, res) => {
+  try {
+    const { userId } = req;; // Get patientId from query parameters if provided
+
+    let records;
+    if (userId) {
+      // Fetch records for a specific patient
+      records = await PatientDataSchema.find({ user_id: userId });
+    } else {
+      // Fetch all patient records
+      records = await PatientDataSchema.find({});
+    }
+
+    // Send the records data as a JSON response
+    res.json(records);
+  } catch (error) {
+    logger.error(error.stack);
+    res.status(500).send({ message: 'Error fetching patient records' });
+  }
+});
+
+// Flask API model
+
+app.post('/report', authenticateToken, async (req, res) => {
+  try {
+    const { patientId, submissionId, data } = req.body;
+
+    if (!patientId || !data) {
+      return res.status(400).send({ message: 'Patient ID and data are required' });
+    }
+
+    // Fetch patient information
+    const patient = await User.findById(patientId);
+    if (!patient) {
+      return res.status(404).send({ message: 'Patient not found' });
+    }
+
+    // Fetch the specific submission data if provided
+    let submissionData;
+    if (submissionId) {
+      submissionData = await PatientDataSchema.findById(submissionId);
+      if (!submissionData) {
+        return res.status(404).send({ message: 'Submission not found' });
+      }
+    }
+
+    // Prepare the data to send to Flask
+    const requestData = {
+      gender: patient.gender,
+      patientAge: patient.age,
+      ...data, // Spread additional data fields required for the Flask API
+    };
+
+    // Send data to the Flask API and receive the prediction/report
+    const flaskResponse = await axios.post(process.env.FLASK_API + "/predict", requestData);
+    const reportData = flaskResponse.data;
+
+    console.log(reportData)
+    // Save the report data in MongoDB under the PatientDataSchema
+    const report = {
+      patientInfo: {
+        id: patient._id,
+        name: patient.name,
+        email: patient.email,
+        phone: patient.phone,
+      },
+      data: reportData, // Use the data received from the Flask API
+      generatedAt: new Date(),
+    };
+
+    const patientData = await PatientDataSchema.findOneAndUpdate(
+      { user_id: patientId },
+      { $set: { reports: report }, }, // Replaces the existing report field or sets it if it doesn't exist
+      { new: true, upsert: true }
+    );
+
+
+    res.json({ message: 'Report generated and saved successfully', report: patientData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: 'Error generating report' });
+  }
+});
+
 
 // Start server
 app.listen(10000, () => {
