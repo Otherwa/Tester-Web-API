@@ -266,7 +266,7 @@ app.post('/report', authenticateToken, async (req, res) => {
     };
 
     const patientData = await PatientDataSchema.findOneAndUpdate(
-      { user_id: patientId },
+      { user_id: patientId, _id: submissionId },
       { $set: { reports: report }, }, // Replaces the existing report field or sets it if it doesn't exist
       { new: true, upsert: true }
     );
